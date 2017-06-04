@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.Test"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="Titel"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		<Panel
+		headerText="Header"
+		class="sapUiResponsiveMargin"
+		width="auto">
+		<content>
+		
+			<Text
+				text="{myModel>/recipient/name}"/>
+				
+		</content>
+	</Panel>
+	</Page>
+</mvc:View>

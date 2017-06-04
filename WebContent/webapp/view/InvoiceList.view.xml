@@ -1,0 +1,37 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.wt.controller.InvoiceList">
+<!-- 
+    hier wird der Pfad auf die Invoices gesetzt indem das named model
+    erweitert wird.
+ -->	
+      <List id="invoiceList" class="sapUiResponsiveMargin" width="auto"
+		items="{ path : 'invoice>/Invoices', sorter : { path : 'ShipperName', group : true } }">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>invoiceListTitle}" />
+				<ToolbarSpacer />
+				<SearchField width="50%" search="onFilterInvoices"
+					selectOnFocus="false" />
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}"
+				number="{ parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+				numberUnit="{view>/currency}"
+				numberState="{= ${invoice>ExtendedPrice} &gt; 50 ? 'Error' : 'Success' }"
+				type="Navigation" press="onPress">
+				<firstStatus>
+					<ObjectStatus
+						text="{ path: 'invoice>Status', formatter: '.formatter.statusText' }" />
+				</firstStatus>
+			</ObjectListItem>
+		</items>
+	</List>
+	<sap.ui.layout:VerticalLayout width="100%"
+		xmlns:sap.ui.layout="sap.ui.layout" id="__layout1">
+		<sap.ui.layout:content>
+			<Button text="Button" width="100px" id="__button2" />
+			<Button text="Button" width="100px" id="__button1" />
+		</sap.ui.layout:content>
+	</sap.ui.layout:VerticalLayout>
+</mvc:View>
