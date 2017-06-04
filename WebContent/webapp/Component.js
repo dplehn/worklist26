@@ -2,9 +2,9 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/wt/controller/HelloDialog",
-    "sap/ui/demo/wt/libs/moment"
-
-], function (UIComponent, JSONModel, HelloDialog,momentjs) {
+    "sap/ui/demo/wt/libs/moment",
+    "sap/ui/demo/wt/libs/lodash"
+], function (UIComponent, JSONModel, HelloDialog,momentjs,lodashjs) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.wt.Component", {
@@ -19,10 +19,13 @@ sap.ui.define([
 		    var dayEN = day.format("dddd");
 		    var myday = day.daysInMonth();
 
+		    console.log(day,day,dayEN,myday);
 
 
+            var array = [1];
+            var other = _.concat(array, 2, [3], [[4]]);
 
-		    console.log(day,dayEN,myday);
+            console.log(other);
 
 
 
