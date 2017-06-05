@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/demo/wt/controller/HelloDialog",
     "sap/ui/demo/wt/libs/moment",
-    "sap/ui/demo/wt/libs/lodash"
-], function (UIComponent, JSONModel, HelloDialog,momentjs,lodashjs) {
+    "sap/ui/demo/wt/libs/lodash",
+    "sap/ui/demo/wt/libs/utils"
+], function (UIComponent, JSONModel, HelloDialog,momentjs,lodashjs,utilsjs) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.wt.Component", {
@@ -26,6 +27,8 @@ sap.ui.define([
             var other = _.concat(array, 2, [3], [[4]]);
 
             console.log(other);
+
+            mydebug("hallo");
 
 
 
