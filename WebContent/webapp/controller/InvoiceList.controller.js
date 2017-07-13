@@ -21,10 +21,19 @@ sap.ui.define([
 		onFilterInvoices: function (oEvent) {
 
 			// build filter array
+
+			/*
+			!!
+			!! Filter wird vom backend nicht unterstützt.
+			!!
+			*/
+
+			console.log("wird filter vom backend unterstützt");
+
 			var aFilter = [];
 			var sQuery = oEvent.getParameter("query");
 			if (sQuery) {
-				aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+				aFilter.push(new Filter("Airline", FilterOperator.Contains, sQuery));
 			}
 
 			// filter binding

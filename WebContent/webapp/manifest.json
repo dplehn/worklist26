@@ -17,7 +17,14 @@
 		"settings": {
 		  "odataVersion": "2.0"
 		}
-	  } 
+	  },
+		"flightRemote": {
+			"uri": "http://gtarzdc1.ede.de:8058/sap/opu/odata/SAP/ZGW_PORTAL_DPLTEST_SRV/",
+			"type": "OData",
+			"settings": {
+				"odataVersion": "2.0"
+			}
+		}
 	}
   },
   "sap.ui": {
@@ -50,7 +57,10 @@
 	  },
 	  "invoice": {
 		"dataSource": "invoiceRemote"
-	  }
+	  },
+		"flight": {
+			"dataSource": "flightRemote"
+		}
 	},
 	"resources": {
 	  "css": [
